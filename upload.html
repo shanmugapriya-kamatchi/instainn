@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Rental Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ffc300;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class=" shadow-xl rounded-2xl bg-white fixed top-0 w-full h-32">
+        <div class="flex flex-row m-10 justify-between">
+            <img class="w-48" src="images/Black and White Typographic Restaurant Logo (1).png" alt="">
+            <div class="search-container mt-3">
+                <input class="shadow-xl" type="text" id="searchInput" placeholder="Enter your search">
+                <button class="shadow-xl" id="searchButton" onclick="performSearch()">Search</button>
+            </div>
+            <div class="flex items-center">
+                <p onclick="navigateToPage()" class="mt-4 mr-9 font hvr">rent your home</p>
+                <div class="mt-4 user font"><span>A</span></div>
+            </div>
+            
+        </div>
+    </div>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+
+        <label for="address">Place:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="price">Rental Price:</label>
+        <input type="number" id="price" name="price" min="0" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
